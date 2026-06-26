@@ -54,7 +54,9 @@ const TYPE_META: Record<QueryType, { label: string; placeholder: string; icon: t
   username: { label: "Usuario", placeholder: "ej. johndoe", icon: UserIcon },
   domain: { label: "Dominio", placeholder: "ej. ejemplo.com", icon: Globe },
   email: { label: "Correo", placeholder: "ej. juan@ejemplo.com", icon: AtSign },
+  name: { label: "Nombre", placeholder: "ej. Juan Pérez", icon: UserIcon },
 };
+
 
 const RISK_VARIANT: Record<OsintResult["risk"], string> = {
   info: "bg-muted text-muted-foreground",
