@@ -2,7 +2,7 @@
 // Reemplaza generateMockResults() por una llamada real a la API de SpiderFoot
 // cuando tengas la instancia disponible.
 
-export type QueryType = "username" | "domain" | "email";
+export type QueryType = "username" | "domain" | "email" | "name";
 
 export interface OsintResult {
   id: string;
@@ -46,6 +46,17 @@ const MODULES_BY_TYPE: Record<QueryType, { module: string; type: string; data: (
     { module: "sfp_gravatar", type: "AVATAR", data: (q) => `gravatar.com/${q.split("@")[0]}`, risk: "info" },
     { module: "sfp_socialprofiles", type: "ACCOUNT_EXTERNAL_OWNED", data: (q) => `linkedin.com/in/${q.split("@")[0]}`, risk: "low" },
   ],
+  name: [
+    { module: "sfp_fullcontact", type: "HUMAN_NAME", data: (q) => `Coincidencia exacta: ${q}`, risk: "info" },
+    { module: "sfp_pipl", type: "AFFILIATE_EMAILADDR", data: (q) => `${q.toLowerCase().replace(/\s+/g, ".")}@gmail.com`, risk: "medium" },
+    { module: "sfp_socialprofiles", type: "ACCOUNT_EXTERNAL_OWNED", data: (q) => `linkedin.com/in/${q.toLowerCase().replace(/\s+/g, "-")}`, risk: "low" },
+    { module: "sfp_socialprofiles", type: "ACCOUNT_EXTERNAL_OWNED", data: (q) => `facebook.com/${q.toLowerCase().replace(/\s+/g, ".")}`, risk: "low" },
+    { module: "sfp_truecaller", type: "PHONE_NUMBER", data: () => `+34 6•• ••• 412`, risk: "medium" },
+    { module: "sfp_companieshouse", type: "AFFILIATE_COMPANY_NAME", data: () => `Director en Acme Holdings Ltd`, risk: "info" },
+    { module: "sfp_publicrecords", type: "PHYSICAL_ADDRESS", data: () => `Madrid, ES (parcial)`, risk: "high" },
+    { module: "sfp_haveibeenpwned", type: "EMAILADDR_COMPROMISED", data: (q) => `${q.toLowerCase().replace(/\s+/g, ".")}@yahoo.com filtrado (Yahoo 2014)`, risk: "high" },
+  ],
+
 };
 
 function pseudoRandom(seed: string): () => number {

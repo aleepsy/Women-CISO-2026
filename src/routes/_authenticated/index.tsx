@@ -54,7 +54,9 @@ const TYPE_META: Record<QueryType, { label: string; placeholder: string; icon: t
   username: { label: "Usuario", placeholder: "ej. johndoe", icon: UserIcon },
   domain: { label: "Dominio", placeholder: "ej. ejemplo.com", icon: Globe },
   email: { label: "Correo", placeholder: "ej. juan@ejemplo.com", icon: AtSign },
+  name: { label: "Nombre", placeholder: "ej. Juan Pérez", icon: UserIcon },
 };
+
 
 const RISK_VARIANT: Record<OsintResult["risk"], string> = {
   info: "bg-muted text-muted-foreground",
@@ -70,6 +72,8 @@ function validate(type: QueryType, value: string): string | null {
   if (type === "email" && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)) return "Correo inválido";
   if (type === "domain" && !/^[a-z0-9.-]+\.[a-z]{2,}$/i.test(v)) return "Dominio inválido";
   if (type === "username" && !/^[a-zA-Z0-9._-]{2,40}$/.test(v)) return "Usuario inválido (2-40, alfanum, . _ -)";
+  if (type === "name" && !/^[\p{L} .'-]{2,80}$/u.test(v)) return "Nombre inválido (2-80, letras y espacios)";
+
   return null;
 }
 
