@@ -2,7 +2,7 @@
 // Reemplaza generateMockResults() por una llamada real a la API de SpiderFoot
 // cuando tengas la instancia disponible.
 
-export type QueryType = "username" | "domain" | "email";
+export type QueryType = "username" | "domain" | "email" | "name";
 
 export interface OsintResult {
   id: string;
