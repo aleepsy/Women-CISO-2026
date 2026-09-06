@@ -1,22 +1,47 @@
-# OSINT Explorer
+# Proyecto: Blindaje de Identidad y Respuesta ante Crisis (BIRC) | OSINT Explorer
 
-ayúdame a crear una página simple en la que se pueda integrar el api de spiderfoot para poder hacer consultas e investigación osint por usuario, dominio, correo o nombre y en la que el usuario pueda interactuar para hacer la búsqueda, los resultados deben devolverse y mostrarse como una tabla de resultados y se puedan exportar a un archivo
+Proyecto de concientización sobre la huella digital que dejamos en internet como herramienta de visualización de mapa digital y un framework para limpiar nuestra huella digital.
 
-This project was built with [Lovable](https://lovable.dev).
+<p align="center">
+<img src="https://github.com/user-attachments/assets/c794b050-96b6-4882-a675-6f68bb9f7f8f#center" alt="Description" width="500" height="500">  
+</p>
 
 **Live app**: https://osintexplorer.lovable.app
 
-## Build with Lovable
+## Caso de negocio
 
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/7865e840-3e92-47bf-b063-d46ad4d5dba3).
+PYMES mexicanas con infraestructura de nube, cuyos directivos manejan información sensible y financiera, convirtiéndolos en blancos de alta prioridad.
 
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: every change made in Lovable is committed straight to this repository.
-- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
+## Estrategia del proyecto
 
-## Development
+Auditoría basada en inteligencia de fuentes abiertas (OSINT) para identificar fugas de información, seguida de un plan de respuesta y limpieza de huella digital corporativa.
 
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
+## Arquitectura de la solución
+
+<p align="center">
+<img src="https://github.com/user-attachments/assets/7e26c237-63dd-4dce-ba93-b152dc0399dc#center" alt="Description" width="900" height="500">  
+</p>
+
+#### Tecnologías Empleadas:
+
+Búsqueda dirigida:
+Metadatos en documentos: Usar herramientas como FOCA o Google Dorks para encontrar PDFs o Excels subidos por la empresa donde aparezcan nombres de usuarios, versiones de software o rutas de servidores locales.
+
+Fugas de Credenciales: Verificar en Have I Been Pwned no solo el correo corporativo, sino el personal de los líderes (que suelen usar para servicios del trabajo).
+Exposición en Redes: Mapear si el Director de Finanzas publica fotos en la oficina donde se ven post-its con claves o el modelo de los equipos.
+
+
+#### Estructura General del Sistema:
+
+Fase de Reconocimiento: Escaneo pasivo de la huella digital del C-Suite y la empresa.
+
+Fase de Simulación: Prueba de Phishing dirigida basada en los hallazgos del OSINT. (opcional)
+
+Fase de Remediación: Ejecución del framework de limpieza y ajuste de privacidad.
+
+## Desarrollo
+
+Para correr localmente, se requiere Node.js y npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
 
 ```sh
 git clone <this-repository-url>
@@ -24,3 +49,9 @@ cd <repository-name>
 npm i
 npm run dev
 ```
+
+
+
+This project was built with [Lovable](https://lovable.dev)
+
+Made with 💜 by ThePowerPuffGirls
