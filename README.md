@@ -6,6 +6,8 @@ Proyecto de concientización sobre la huella digital que dejamos en internet com
 <img src="https://github.com/user-attachments/assets/c794b050-96b6-4882-a675-6f68bb9f7f8f#center" alt="Description" width="500" height="500">  
 </p>
 
+**Video Pitch**: https://youtu.be/dSqqYfoxJ8k
+
 **Live app**: https://osintexplorer.lovable.app
 
 ## Caso de negocio
